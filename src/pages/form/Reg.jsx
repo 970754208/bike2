@@ -210,7 +210,7 @@ class Login extends Component {
               }
             </FormItem>
             <FormItem {...subLayout}>
-              <Checkbox>我已阅读过<a href="#">慕课协议</a></Checkbox>
+              <Checkbox>我已阅读过<a href="/home">慕课协议</a></Checkbox>
             </FormItem>
             <FormItem {...subLayout}>
               <Button htmlType="submit" type="primary">提交</Button>

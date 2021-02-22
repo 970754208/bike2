@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card, Checkbox, Form, Input, message } from 'antd'
+import { Button, Card, Checkbox, Form, Icon, Input, message } from 'antd'
 
 const FormItem = Form.Item
 
@@ -43,7 +43,7 @@ class Login extends Component {
                     }
                   ]
                 })(
-                  <Input placeholder="请输入用户名" />
+                  <Input prefix={<Icon type="user" />} placeholder="请输入用户名" />
                 )
               }
             </FormItem>
@@ -56,13 +56,13 @@ class Login extends Component {
                     }
                   ]
                 })(
-                  <Input type="password" placeholder="请输入密码" />
+                  <Input prefix={<Icon type="lock" />} type="password" placeholder="请输入密码" />
                 )
               }
             </FormItem>
             <FormItem>
               <Checkbox>记住密码</Checkbox>
-              <a href="#" style={{float: 'right'}}>忘记密码</a>
+              <a href="/home" style={{float: 'right'}}>忘记密码</a>
             </FormItem>
             <FormItem>
               <Button type="primary" htmlType="submit">登录</Button>

@@ -22,13 +22,13 @@ class NavLeft extends Component {
   }
   componentDidMount () {
     let currentKey = window.location.hash.replace(/^#|\?.*$/, '');
-    console.log(currentKey)
+    // console.log(currentKey)
     this.setState({
       currentKey
     })
   }
   handleClick = ({item, key}) => {
-    console.log(item, key)
+    // console.log(item, key)
     this.setState({
       currentKey: key
     })
