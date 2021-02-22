@@ -8,6 +8,7 @@
 # testing
 /coverage
 
+/public/assets
 /public/carousel-img
 /public/gallery
 
