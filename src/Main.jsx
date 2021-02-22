@@ -15,7 +15,7 @@ export default class Main extends Component {
           <Col span={20} className="lay-right">
             <Header />
             <div className="content">
-              
+              {this.props.children}
             </div>
             <Footer />
           </Col>

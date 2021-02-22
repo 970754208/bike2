@@ -10,7 +10,7 @@ const utils = {
       h = formate(time.getHours()),
       M = formate(time.getMinutes()),
       s = formate(time.getSeconds());
-    return `${y}年${m}月${d}日 ${h}:${M}:${s}`;
+    return `${y}-${m}-${d} ${h}:${M}:${s}`;
   },
   
 }
