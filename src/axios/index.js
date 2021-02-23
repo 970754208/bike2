@@ -1,7 +1,30 @@
 import { Modal } from 'antd';
 import axios from 'axios'
-
+import Utils from '@/utils'
 export default class Axios {
+  static requestList (_this, url, params) {
+    this.ajax({
+      url,
+      data: {
+        params
+      }
+    }).then(res => {
+      if (res.code === 0) {
+        console.log(res)
+        _this.setState({
+          dataSource: res.result.item_list.map((item, index) => {
+            item.key = index;
+            return item;
+          }),
+          pagination: Utils.pagination(res, current => {
+            _this.params.page = current;
+            _this.requestList();
+          })
+        })
+      }
+    })
+  }
+
   static ajax (opt) {
     return new Promise((res, rej) => {
       let loadDOM = document.querySelector('.ajax-loading');

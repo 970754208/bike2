@@ -26,10 +26,10 @@ export default class index extends Component {
         selectedRows.splice(index, 1)
       }
     } else {
-      selectedRowKeys = [index];
+      selectedRowKeys = [index1];
       selectedRows = [record]
     }
-    console.log(selectedRowKeys, selectedRows)
+    // console.log(selectedRowKeys, selectedRows)
     dealChange(selectedRowKeys, selectedRows)
   }
 

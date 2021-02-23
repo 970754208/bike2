@@ -19,25 +19,7 @@ export default class City extends Component {
   }
 
   requestList = () => {
-    axios.ajax({
-      url: '/open_city',
-      data: {
-        params: this.params
-      }
-    }).then(res => {
-      if (res.code === 0) {
-        this.setState({
-          dataSource: res.result.item_list.map((item, index) => {
-            item.key = index;
-            return item
-          }),
-          pagination: Utils.pagination(res, current => {
-            this.params.page = current;
-            this.requestList()
-          })
-        })
-      }
-    })
+    axios.requestList(this, '/open_city', this.params)
   }
 
   filterSubmit = (params) => {
