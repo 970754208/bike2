@@ -1,3 +1,7 @@
+import { Select } from 'antd'
+
+const Option = Select.Option
+
 const formate = function (time) {
   return time < 10 ? '0' + time : time
 }
@@ -21,6 +25,12 @@ const utils = {
         callback(current)
       }
     }
+  },
+  getOptions (options) {
+    // console.log(options)
+    return options.map(opt => {
+      return <Option value={opt.value} key={opt.value}>{opt.title}</Option>
+    })
   }
 }
 export default utils
