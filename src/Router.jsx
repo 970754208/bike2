@@ -25,6 +25,7 @@ import BikeMap from '@/pages/bikeMap'
 import Bar from '@/pages/charts/Bar'
 import Pie from '@/pages/charts/Pie'
 import Line from '@/pages/charts/Line'
+import Permission from '@/pages/permission'
 
 import NoMatch from '@/pages/404'
 export default class IRouter extends Component {
@@ -62,6 +63,7 @@ export default class IRouter extends Component {
                   <Route path="/charts/bar" component={Bar} />
                   <Route path="/charts/pie" component={Pie} />
                   <Route path="/charts/line" component={Line} />
+                  <Route path="/permission" component={Permission} />
                   <Route component={NoMatch} />
                 </Switch>
               </Main>
