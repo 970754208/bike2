@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Row, Col } from 'antd'
 import axios from 'axios'
 import Utils from '../../utils'
 import './index.less'
 
-export default class Header extends Component {
+class Header extends Component {
   constructor() {
     super();
     this.state = {
@@ -39,7 +40,7 @@ export default class Header extends Component {
   }
   render() {
     const { date, city, weather } = this.state;
-    const { detailPage } = this.props;
+    const { detailPage, menuName } = this.props;
     const headClass = detailPage ? 'header detail-header' : 'header'
     return (
       <div className={headClass}>
@@ -61,7 +62,7 @@ export default class Header extends Component {
           !detailPage
             ? <Row className="header-bot">
               <Col className="title" span={5}>
-                首页
+                { menuName }
               </Col>
               <Col className="date" span={19}>
                 {date}
@@ -75,3 +76,9 @@ export default class Header extends Component {
     )
   }
 }
+const mapStateToProps = (state, ownProps) => {
+  return {
+    menuName: state.menuName
+  }
+}
+export default connect(mapStateToProps)(Header);

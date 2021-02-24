@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Menu } from 'antd'
 import { Link } from 'react-router-dom'
 import menuList from '../../config/menuConfig'
 import './index.less'
+import { switchMenu } from '@/redux/action'
 
 const { Item, SubMenu } = Menu
 class NavLeft extends Component {
@@ -14,7 +16,7 @@ class NavLeft extends Component {
           {this.renderMenu(item.children)}
         </SubMenu>
       } else {
-        return <Item key={item.key}>
+        return <Item key={item.key} title={item.title}>
           <Link to={item.key}>{item.title}</Link>
         </Item>
       }
@@ -32,6 +34,7 @@ class NavLeft extends Component {
     this.setState({
       currentKey: key
     })
+    this.props.dispatch(switchMenu(item.props.title))
   }
   render() {
     return (
@@ -52,4 +55,4 @@ class NavLeft extends Component {
   }
 }
 
-export default NavLeft
+export default connect()(NavLeft)

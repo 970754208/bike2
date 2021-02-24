@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import App from './App'
 import Common from './Common'
 import Main from './Main'
@@ -64,6 +64,7 @@ export default class IRouter extends Component {
                   <Route path="/charts/pie" component={Pie} />
                   <Route path="/charts/line" component={Line} />
                   <Route path="/permission" component={Permission} />
+                  <Redirect from="/" exact to="/home" />
                   <Route component={NoMatch} />
                 </Switch>
               </Main>

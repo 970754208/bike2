@@ -1,4 +1,4 @@
-export default {
+const obj = {
     "color": [
         "#f9c700",
         "#ff5400",
@@ -209,3 +209,4 @@ export default {
         }
     }
 }
+export default obj

@@ -10,7 +10,7 @@ export default class Axios {
       }
     }).then(res => {
       if (res.code === 0) {
-        console.log(res)
+        // console.log(res)
         _this.setState({
           dataSource: res.result.item_list.map((item, index) => {
             item.key = index;
