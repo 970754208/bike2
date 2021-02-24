@@ -22,6 +22,9 @@ import Order from '@/pages/order'
 import Detail from '@/pages/order/Detail'
 import User from '@/pages/user'
 import BikeMap from '@/pages/bikeMap'
+import Bar from '@/pages/charts/Bar'
+import Pie from '@/pages/charts/Pie'
+import Line from '@/pages/charts/Line'
 
 import NoMatch from '@/pages/404'
 export default class IRouter extends Component {
@@ -56,6 +59,9 @@ export default class IRouter extends Component {
                   <Route path="/order" component={Order} />
                   <Route path="/user" component={User} />
                   <Route path="/bikeMap" component={BikeMap} />
+                  <Route path="/charts/bar" component={Bar} />
+                  <Route path="/charts/pie" component={Pie} />
+                  <Route path="/charts/line" component={Line} />
                   <Route component={NoMatch} />
                 </Switch>
               </Main>
