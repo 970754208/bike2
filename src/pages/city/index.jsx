@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Form, Select, Table, Button, Modal, message } from 'antd'
+import { Card, Form, Select, Button, Modal, message } from 'antd'
 import axios from '@/axios'
 import Utils from '@/utils'
 import BaseForm from '@/components/BaseForm'
@@ -197,49 +197,6 @@ export default class City extends Component {
     )
   }
 }
-
-class FilterForm extends Component {
-  render() {
-    return (
-      <Form layout="inline" >
-        <FormItem label="城市">
-          <Select value="1">
-            <Option key="0">全部</Option>
-            <Option key="1" value="1">北京市</Option>
-            <Option key="2" value="2">天津市</Option>
-            <Option key="3" value="3">保定市</Option>
-          </Select>
-        </FormItem>
-        <FormItem label="用车模式">
-          <Select value="1">
-            <Option key="0">全部</Option>
-            <Option key="1" value="1">指定停单点模式</Option>
-            <Option key="2" value="2">禁停区模式</Option>
-          </Select>
-        </FormItem>
-        <FormItem label="营运模式">
-          <Select value="1">
-            <Option key="0">全部</Option>
-            <Option key="1" value="1">自营</Option>
-            <Option key="2" value="2">加盟</Option>
-          </Select>
-        </FormItem>
-        <FormItem label="加盟商授权模式">
-          <Select value="1">
-            <Option key="0">全部</Option>
-            <Option key="1" value="1">已授权</Option>
-            <Option key="2" value="2">未授权</Option>
-          </Select>
-        </FormItem>
-        <FormItem>
-          <Button type="primary" style={{ marginRight: 20 }}>查询</Button>
-          <Button>重置</Button>
-        </FormItem>
-      </Form >
-    )
-  }
-}
-FilterForm = Form.create()(FilterForm)
 
 class OpenCity extends Component {
   render() {

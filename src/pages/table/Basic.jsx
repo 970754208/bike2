@@ -236,7 +236,6 @@ export default class Basic extends Component {
           <Table
             columns={columns}
             dataSource={dataSource2}
-            pagination={false}
             bordered
             pagination={pagination}
           />

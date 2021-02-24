@@ -10,8 +10,9 @@ class BaseForm extends Component {
   renderItem = (formList) => {
     const { getFieldDecorator } = this.props.form;
     return formList.map(item => {
+      let backDom = null;
       if (item.type === 'SELECT') {
-        return <FormItem label={item.label} key={item.field}>
+        backDom =  <FormItem label={item.label} key={item.field}>
           {
             getFieldDecorator(item.field, {
               initialValue: item.initialValue
@@ -23,7 +24,7 @@ class BaseForm extends Component {
           }
         </FormItem>
       } else if (item.type === 'INPUT') {
-        return <FormItem label={item.label} key={item.field}>
+        backDom =  <FormItem label={item.label} key={item.field}>
           {
             getFieldDecorator(item.field)(
               <Input placeholder={item.placeholder} />
@@ -31,7 +32,7 @@ class BaseForm extends Component {
           }
         </FormItem>
       } else if (item.type === 'DATE') {
-        return <FormItem label={item.label} key={item.field}>
+        backDom =  <FormItem label={item.label} key={item.field}>
           {
             getFieldDecorator(item.field)(
               <DatePicker placeholder={item.placeholder} />
@@ -39,7 +40,7 @@ class BaseForm extends Component {
           }
         </FormItem>
       } else if (item.type === '起止时间') {
-        return <FormItem label={item.label} key={item.field}>
+        backDom =  <FormItem label={item.label} key={item.field}>
           {
             getFieldDecorator(item.field)(
               <RangePicker />
@@ -47,6 +48,7 @@ class BaseForm extends Component {
           }
         </FormItem>
       }
+      return backDom;
     })
   }
 

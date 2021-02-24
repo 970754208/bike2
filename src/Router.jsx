@@ -21,6 +21,7 @@ import City from '@/pages/city'
 import Order from '@/pages/order'
 import Detail from '@/pages/order/Detail'
 import User from '@/pages/user'
+import BikeMap from '@/pages/bikeMap'
 
 import NoMatch from '@/pages/404'
 export default class IRouter extends Component {
@@ -54,6 +55,7 @@ export default class IRouter extends Component {
                   <Route path="/city" component={City} />
                   <Route path="/order" component={Order} />
                   <Route path="/user" component={User} />
+                  <Route path="/bikeMap" component={BikeMap} />
                   <Route component={NoMatch} />
                 </Switch>
               </Main>

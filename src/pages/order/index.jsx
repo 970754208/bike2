@@ -3,7 +3,6 @@ import { Button, Card, Form, message, Modal } from 'antd'
 import BaseForm from '@/components/BaseForm'
 import ETable from '@/components/ETable'
 import axios from '@/axios'
-import Utils from '@/utils'
 
 const FormItem = Form.Item
 
